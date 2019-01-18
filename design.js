@@ -18,6 +18,9 @@ xmlhttp.send();
 
 function displayResults(searchString){
 	$("#result-list-group").empty();
+	$("#fav-list-group").empty();
+	objData={};
+	fav={};
 	for(var i=0;i<data.length;i++){
 		 if((data[i]['title'].toLowerCase().search(searchString.toLowerCase())>=0 || data[i]['keywords'].toLowerCase().search(searchString.toLowerCase())>=0 ) && searchString!=''){
 		 		$("#result-list-group").append("<li><span><i class='far fa-star' id='" + data[i]['title'] + "'></i>" 
@@ -40,6 +43,8 @@ $("#searchBox").keyup(function(){
 	if($(this).val().length<1){
 		$("#result-list-group").empty();
 		$("#fav-list-group").empty();
+		objData={};
+		fav={};
 	}
 });
 
