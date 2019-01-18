@@ -1,0 +1,83 @@
+html,body {
+    height:100%;
+}
+
+#myHeading {
+	background: #34e89e;  
+	background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  
+	background: linear-gradient(to right, #0f3443, #34e89e); 
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	height: 40px;
+}
+
+.container {
+	height: 730px;
+	width: 60%;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+
+#searchBar {
+	width: 99%;
+	height: 40px;
+	margin: 1px 2px;
+}
+
+#searchBox {
+	height: 75%;
+	width: 93%;
+	margin: 0px auto;
+	padding: 1px;
+}
+
+
+h1{
+	margin: 1px 0px;
+	padding: 2px 3px;
+	height: 30px;
+	color: #00b33c;
+}
+
+#results {
+	height: 350px;
+	overflow: auto;
+	margin: 1px 0px;
+	padding: 5px 5px;
+}
+
+#myFavourites {
+	height: 210px;
+	overflow: auto;
+	padding: 5px 5px;
+	margin: 1px 0px;
+}
+
+
+#result-list-group li {
+	list-style: none;
+}
+
+#fav-list-group li {
+	list-style: none;
+}
+
+li ul li {
+	list-style: initial;
+}
+
+
+#searchBar .fas{
+	background-color: green;
+	color: white;
+	height: 100%;
+	width: 4%;
+	font-size: 30px;
+	text-align: center;
+	margin: 1px auto;
+}
+
+.fas {
+	color: green;
+}
