@@ -72,7 +72,8 @@ $("#result-list-group").on("click","i",function(){
 $("#fav-list-group").on("click","i",function(){
 	var myId = $(this).attr('id');
 	delete fav[myId.substring(4)];
-	document.getElementById(myId.substring(4)).setAttribute('class','far fa-star');
+	if(objData.hasOwnProperty(myId.substring(4)))
+		document.getElementById(myId.substring(4)).setAttribute('class','far fa-star');
 	displayFavourites();
 });
 
