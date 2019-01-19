@@ -81,4 +81,3 @@ function displayFavourites(){
 		$("#fav-list-group").append("<li><span><i class='fas fa-star' id='fav_" + key + "'></i>" + key + "</span>" + fav[key] + "</li>");
 	});	
 }
-
