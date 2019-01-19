@@ -23,11 +23,13 @@ function displayResults(searchString){
 		 if((data[i]['title'].toLowerCase().search(searchString.toLowerCase())>=0 || data[i]['keywords'].toLowerCase().search(searchString.toLowerCase())>=0 ) && searchString!=''){
 		 		if(fav.hasOwnProperty(data[i]['title']))
 		 			$("#result-list-group").append("<li><span><i class='fas fa-star' id='" + data[i]['title'] + "'></i>" 
-		 				+ data[i]['title']  +  "</span>" + data[i]['body'] + "</li>");
+		 				+ data[i]['title']  +  "</span><span id='sp_" + data[i]['title'] +"'></span>" +  "</li>");
 		 		else
 		 			$("#result-list-group").append("<li><span><i class='far fa-star' id='" + data[i]['title'] + "'></i>" 
-		 				+ data[i]['title']  +  "</span>" + data[i]['body'] + "</li>");
-		 		objData[data[i]['title']] = data[i]['body'];
+		 				+ data[i]['title']  +  "</span><span id='sp_" + data[i]['title'] +"'></span>" + "</li>");
+
+		 		 document.getElementById('sp_' + data[i]['title']).innerHTML = data[i]['body'];
+		 		 objData[data[i]['title']] = data[i]['body'];
 		 } 	
 	}
 }
@@ -81,3 +83,4 @@ function displayFavourites(){
 		$("#fav-list-group").append("<li><span><i class='fas fa-star' id='fav_" + key + "'></i>" + key + "</span>" + fav[key] + "</li>");
 	});	
 }
+
