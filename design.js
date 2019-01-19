@@ -79,7 +79,6 @@ function displayFavourites(){
 	$("#fav-list-group").empty();
 	Object.keys(fav).forEach(function(key) {
 		$("#fav-list-group").append("<li><span><i class='fas fa-star' id='fav_" + key + "'></i>" + key + "</span>" + fav[key] + "</li>");
-		$("").attr('class','')
 	});	
 }
 
