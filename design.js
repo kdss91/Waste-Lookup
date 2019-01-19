@@ -18,13 +18,15 @@ xmlhttp.send();
 
 function displayResults(searchString){
 	$("#result-list-group").empty();
-	$("#fav-list-group").empty();
 	objData={};
-	fav={};
 	for(var i=0;i<data.length;i++){
 		 if((data[i]['title'].toLowerCase().search(searchString.toLowerCase())>=0 || data[i]['keywords'].toLowerCase().search(searchString.toLowerCase())>=0 ) && searchString!=''){
-		 		$("#result-list-group").append("<li><span><i class='far fa-star' id='" + data[i]['title'] + "'></i>" 
-		 			+ data[i]['title']  +  "</span>" + data[i]['body'] + "</li>");
+		 		if(fav.hasOwnProperty(data[i]['title']))
+		 			$("#result-list-group").append("<li><span><i class='fas fa-star' id='" + data[i]['title'] + "'></i>" 
+		 				+ data[i]['title']  +  "</span>" + data[i]['body'] + "</li>");
+		 		else
+		 			$("#result-list-group").append("<li><span><i class='far fa-star' id='" + data[i]['title'] + "'></i>" 
+		 				+ data[i]['title']  +  "</span>" + data[i]['body'] + "</li>");
 		 		objData[data[i]['title']] = data[i]['body'];
 		 } 	
 	}
@@ -42,9 +44,7 @@ $("#searchBox").keypress(function(event){
 $("#searchBox").keyup(function(){
 	if($(this).val().length<1){
 		$("#result-list-group").empty();
-		$("#fav-list-group").empty();
 		objData={};
-		fav={};
 	}
 });
 
@@ -79,6 +79,7 @@ function displayFavourites(){
 	$("#fav-list-group").empty();
 	Object.keys(fav).forEach(function(key) {
 		$("#fav-list-group").append("<li><span><i class='fas fa-star' id='fav_" + key + "'></i>" + key + "</span>" + fav[key] + "</li>");
+		$("").attr('class','')
 	});	
 }
 
